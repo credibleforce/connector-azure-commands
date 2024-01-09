@@ -1,0 +1,492 @@
+{
+  "name": "azure-commands",
+  "label": "Azure Commands",
+  "version": "1.0.0",
+  "description": "Azure Commands are used to run Azure native commands for Azure resources configurations directly from FortiSOAR.",
+  "publisher": "Fortinet",
+  "cs_approved": true,
+  "cs_compatible": true,
+  "category": "Asset Management",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Client ID",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "client_id",
+        "tooltip": "Specify the Unique API ID of the Azure AD application that is used to create an authentication token required to access the API.",
+        "description": "Specify the Unique API ID of the Azure AD application that is used to create an authentication token required to access the API. "
+      },
+      {
+        "title": "Client Secret",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "client_secret",
+        "tooltip": "Specify the Unique API Secret of the Azure AD application that is used to create an authentication token required to access the API.",
+        "description": "Specify the Unique API Secret of the Azure AD application that is used to create an authentication token required to access the API. "
+      },
+      {
+        "title": "Tenant ID",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "tenant_id",
+        "tooltip": "Specify the ID of the tenant that you have been provided for your Azure Active Directory instance.",
+        "description": "Specify the ID of the tenant that you have been provided for your Azure Active Directory instance."
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "list_vm",
+      "title": "List Virtual Machines",
+      "description": "List details of all VM information under the subscription on Microsoft Azure Platform .",
+      "category": "investigation",
+      "annotation": "list_vm",
+      "enabled": true,
+      "output_schema": [
+        {
+          "id": "",
+          "name": "",
+          "type": "",
+          "location": "",
+          "tags": {
+            "environment": ""
+          },
+          "hardwareProfile": {
+            "vmSize": ""
+          },
+          "storageProfile": {
+            "osDisk": {
+              "osType": "",
+              "name": "",
+              "createOption": ""
+            },
+            "dataDisks": []
+          },
+          "networkProfile": {
+            "networkInterfaces": [
+              {
+                "id": "",
+                "properties": {
+                  "primary": ""
+                }
+              }
+            ]
+          },
+          "provisioningState": "",
+          "vmId": "",
+          "instanceView": {
+            "statuses": [
+              {
+                "code": "",
+                "level": "",
+                "displayStatus": ""
+              }
+            ]
+          }
+        }
+      ],
+      "parameters": [
+        {
+          "title": "Resource Group",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "resource_group",
+          "description": "Specify the resource group name whose VM details you want to list.",
+          "tooltip": "Specify the resource group name whose VM details you want to list."
+        },
+        {
+          "title": "Optional Parameters",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "optional_parameters",
+          "description": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false",
+          "tooltip": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false"
+        }
+      ]
+    },
+    {
+      "operation": "get_vm",
+      "title": "Get Virtual Machine",
+      "description": "Get details of a VM under the subscription on Microsoft Azure Platform by VM id and other parameters.",
+      "category": "investigation",
+      "annotation": "get_vm",
+      "enabled": true,
+      "output_schema": {
+        "additionalCapabilities": "",
+        "availabilitySet": "",
+        "diagnosticsProfile": {
+          "bootDiagnostics": {
+            "enabled": "",
+            "storageUri": ""
+          }
+        },
+        "hardwareProfile": {
+          "vmSize": ""
+        },
+        "id": "",
+        "location": "",
+        "name": "",
+        "networkProfile": {
+          "networkInterfaces": [
+            {
+              "id": "",
+              "primary": ""
+            }
+          ]
+        },
+        "osProfile": {
+          "computerName": "",
+          "adminUsername": "",
+          "linuxConfiguration": {
+            "disablePasswordAuthentication": "",
+            "ssh": {
+              "publicKeys": [
+                {
+                  "keyData": ""
+                }
+              ]
+            }
+          }
+        },
+        "provisioningState": "",
+        "resourceGroup": "",
+        "storageProfile": {
+          "dataDisks": [],
+          "imageReference": {
+            "offer": "",
+            "publisher": "",
+            "sku": "",
+            "version": ""
+          },
+          "osDisk": {
+            "caching": "",
+            "createOption": "",
+            "diskSizeGB": "",
+            "managedDisk": {
+              "id": "",
+              "storageAccountType": ""
+            },
+            "name": "",
+            "osType": ""
+          }
+        },
+        "tags": {},
+        "type": "",
+        "zones": ""
+      },
+      "parameters": [
+        {
+          "title": "VM ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "id",
+          "description": "Specify the ID of the VM whose details you want to fetch.",
+          "tooltip": "Specify the ID of the VM whose details you want to fetch."
+        },
+        {
+          "title": "Resource Group",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "resource_group",
+          "description": "Specify the resource group name whose VM details you want to list.",
+          "tooltip": "Specify the resource group name whose VM details you want to list."
+        },
+        {
+          "title": "Optional Parameters",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "optional_parameters",
+          "description": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false",
+          "tooltip": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false"
+        }
+      ]
+    },
+    {
+      "operation": "delete_vm",
+      "title": "Delete Virtual Machine",
+      "description": "Delete a VM under the subscription on Microsoft Azure Platform on the basis of VM id and other parameters.",
+      "category": "investigation",
+      "annotation": "delete_vm",
+      "enabled": true,
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "VM ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "id",
+          "description": "Specify the ID of the VM which you want to delete.",
+          "tooltip": "Specify the ID of the VM which you want to delete."
+        },
+        {
+          "title": "Resource Group",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "resource_group",
+          "description": "Specify the resource group name whose VM details you want to list.",
+          "tooltip": "Specify the resource group name whose VM details you want to list."
+        },
+        {
+          "title": "Optional Parameters",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "optional_parameters",
+          "description": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false",
+          "tooltip": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false"
+        }
+      ]
+    },
+    {
+      "operation": "list_resource",
+      "title": "List Resources",
+      "description": "List details of all Resource's information under the subscription on Microsoft Azure Platform .",
+      "category": "investigation",
+      "annotation": "list_resource",
+      "enabled": true,
+      "output_schema": [
+        {
+          "id": "",
+          "sku": {
+            "name": "",
+            "size": "",
+            "tier": "",
+            "model": "",
+            "family": "",
+            "capacity": ""
+          },
+          "kind": "",
+          "name": "",
+          "plan": "",
+          "tags": {},
+          "type": "",
+          "identity": "",
+          "location": "",
+          "managedBy": "",
+          "properties": "",
+          "changedTime": "",
+          "createdTime": "",
+          "resourceGroup": "",
+          "extendedLocation": "",
+          "provisioningState": ""
+        }
+      ],
+      "parameters": [
+        {
+          "title": "Location",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "location",
+          "description": "Specify the location of the resource whose details you want to list.",
+          "tooltip": "Specify the location of the resource whose details you want to list."
+        },
+        {
+          "title": "Optional Parameters",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "optional_parameters",
+          "description": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false",
+          "tooltip": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false"
+        }
+      ]
+    },
+    {
+      "operation": "get_resource",
+      "title": "Get Resource",
+      "description": "Get details of a Resource under the subscription on Microsoft Azure Platform by Resource id and other parameters.",
+      "category": "investigation",
+      "annotation": "get_resource",
+      "enabled": true,
+      "output_schema": {
+        "id": "",
+        "sku": {
+          "name": "",
+          "size": "",
+          "tier": "",
+          "model": "",
+          "family": "",
+          "capacity": ""
+        },
+        "etag": "",
+        "kind": "",
+        "name": "",
+        "plan": "",
+        "tags": {},
+        "type": "",
+        "zones": [],
+        "identity": "",
+        "location": "",
+        "managedBy": "",
+        "properties": {
+          "iconUrl": "",
+          "endpoint": "",
+          "msaAppId": "",
+          "tenantId": "",
+          "luisAppIds": [],
+          "msaAppType": "",
+          "parameters": "",
+          "allSettings": "",
+          "description": "",
+          "displayName": "",
+          "manifestUrl": "",
+          "openWithHint": "",
+          "isCmekEnabled": "",
+          "migrationToken": "",
+          "msaAppTenantId": "",
+          "appPasswordHint": "",
+          "cmekKeyVaultUrl": "",
+          "enabledChannels": [],
+          "endpointVersion": "",
+          "disableLocalAuth": "",
+          "provisioningState": "",
+          "storageResourceId": "",
+          "configuredChannels": [],
+          "msaAppMSIResourceId": "",
+          "publicNetworkAccess": "",
+          "cmekEncryptionStatus": "",
+          "isStreamingSupported": "",
+          "publishingCredentials": "",
+          "developerAppInsightKey": "",
+          "schemaTransformationVersion": "",
+          "isDeveloperAppInsightsApiKeySet": "",
+          "developerAppInsightsApplicationId": ""
+        },
+        "resourceGroup": "",
+        "extendedLocation": ""
+      },
+      "parameters": [
+        {
+          "title": "Resource ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "id",
+          "description": "Specify the ID of the Resource whose details you want to fetch.",
+          "tooltip": "Specify the ID of the Resource whose details you want to fetch."
+        },
+        {
+          "title": "Resource Group",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "resource_group",
+          "description": "Specify the resource group name whose Resource details you want to list.",
+          "tooltip": "Specify the resource group name whose Resource details you want to list."
+        },
+        {
+          "title": "Optional Parameters",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "optional_parameters",
+          "description": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false",
+          "tooltip": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false"
+        }
+      ]
+    },
+    {
+      "operation": "delete_resource",
+      "title": "Delete Resource",
+      "description": "Delete a Resource under the subscription on Microsoft Azure Platform on the basis of Resource id and other parameters.",
+      "category": "investigation",
+      "annotation": "delete_resource",
+      "enabled": true,
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Resource ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "id",
+          "description": "Specify the ID of the Resource which you want to delete.",
+          "tooltip": "Specify the ID of the Resource which you want to delete."
+        },
+        {
+          "title": "Resource Group",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "resource_group",
+          "description": "Specify the resource group name whose Resource details you want to list.",
+          "tooltip": "Specify the resource group name whose Resource details you want to list."
+        },
+        {
+          "title": "Optional Parameters",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "optional_parameters",
+          "description": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false",
+          "tooltip": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false"
+        }
+      ]
+    },
+    {
+      "operation": "generic_command",
+      "title": "Generic Command",
+      "description": "Runs a generic Azure command on the host with given parameters and values.",
+      "category": "investigation",
+      "annotation": "generic_command",
+      "enabled": true,
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Command",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "command",
+          "description": "Specify the Azure command to run on the host without the az. For example if you want to run az vm list, Specify 'vm list'",
+          "tooltip": "Specify the Azure command to run on the host without the az. For example if you want to run az vm list, Specify 'vm list'"
+        },
+        {
+          "title": "Optional Parameters",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "optional_parameters",
+          "description": "Specify the optional command name and its value through which you want to filter the results. Ex: --show-details false",
+          "tooltip": "Specify the optional command name and its value through which you want to filter the results. Ex: --show-details false"
+        }
+      ]
+    }
+  ]
+}

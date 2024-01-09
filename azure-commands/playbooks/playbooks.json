@@ -1,0 +1,579 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "7114456f-dd17-4ab3-886e-539f910c7fb8",
+      "@type": "WorkflowCollection",
+      "name": "Sample - Azure Commands - 1.0.0",
+      "description": "Azure Commands are used to run Azure native commands for Azure resources configurations directly from FortiSOAR.",
+      "visible": true,
+      "image": null,
+      "recordTags": [
+        "Azure",
+        "azure-commands"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "d7617587-85a3-4984-a4aa-4100149a0018",
+          "collection": "/api/3/workflow_collections/7114456f-dd17-4ab3-886e-539f910c7fb8",
+          "triggerLimit": null,
+          "description": "List details of all VM information under the subscription on Microsoft Azure Platform .",
+          "name": "List Virtual Machines",
+          "tag": "#Azure Commands",
+          "recordTags": [
+            "Azure",
+            "azure-commands"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/95e8f275-6f8a-4f92-b683-ce55a38991ad",
+          "steps": [
+            {
+              "uuid": "95e8f275-6f8a-4f92-b683-ce55a38991ad",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "36fa0e83-9d15-4936-b1cf-33707975fc66",
+                "title": "Azure Commands: List Virtual Machines",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "8c6a97c8-9ee6-45e6-b26c-adbcad5ac931",
+              "@type": "WorkflowStep",
+              "name": "List Virtual Machines",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Azure Commands",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "azure-commands",
+                "operation": "list_vm",
+                "operationTitle": "List Virtual Machines",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "7fed6e57-9213-4616-849f-9c1f06c211a0",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> List Virtual Machines",
+              "sourceStep": "/api/3/workflow_steps/95e8f275-6f8a-4f92-b683-ce55a38991ad",
+              "targetStep": "/api/3/workflow_steps/8c6a97c8-9ee6-45e6-b26c-adbcad5ac931"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "fc32a7f9-d48f-46d4-985a-446b39287e54",
+          "collection": "/api/3/workflow_collections/7114456f-dd17-4ab3-886e-539f910c7fb8",
+          "triggerLimit": null,
+          "description": "Get details of a VM under the subscription on Microsoft Azure Platform by VM id and other parameters.",
+          "name": "Get Virtual Machine",
+          "tag": "#Azure Commands",
+          "recordTags": [
+            "Azure",
+            "azure-commands"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/34b9bdde-8539-4279-a365-a60685bde40b",
+          "steps": [
+            {
+              "uuid": "34b9bdde-8539-4279-a365-a60685bde40b",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "84f8586f-45ff-44d1-81d1-3d49b9ddef4e",
+                "title": "Azure Commands: Get Virtual Machine",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "c2cfa6d6-9687-4bbb-9989-eb382fca7f47",
+              "@type": "WorkflowStep",
+              "name": "Get Virtual Machine",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Azure Commands",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "azure-commands",
+                "operation": "get_vm",
+                "operationTitle": "Get Virtual Machine",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "9c18c7bd-f367-4495-8d2b-b1391396caca",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Virtual Machine",
+              "sourceStep": "/api/3/workflow_steps/34b9bdde-8539-4279-a365-a60685bde40b",
+              "targetStep": "/api/3/workflow_steps/c2cfa6d6-9687-4bbb-9989-eb382fca7f47"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "ac87e15f-3ff0-47db-9b5c-1e0f048c71ba",
+          "collection": "/api/3/workflow_collections/7114456f-dd17-4ab3-886e-539f910c7fb8",
+          "triggerLimit": null,
+          "description": "Delete a VM under the subscription on Microsoft Azure Platform on the basis of VM id and other parameters.",
+          "name": "Delete Virtual Machine",
+          "tag": "#Azure Commands",
+          "recordTags": [
+            "Azure",
+            "azure-commands"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/2075b55a-c0b7-418b-ae38-d6f1f58a2cf3",
+          "steps": [
+            {
+              "uuid": "2075b55a-c0b7-418b-ae38-d6f1f58a2cf3",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "f3f3c433-c41d-47b6-bebe-685285311836",
+                "title": "Azure Commands: Delete Virtual Machine",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "d46552db-0eca-41c2-ace1-18b65f8a0833",
+              "@type": "WorkflowStep",
+              "name": "Delete Virtual Machine",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Azure Commands",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "azure-commands",
+                "operation": "delete_vm",
+                "operationTitle": "Delete Virtual Machine",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "ceb8eaeb-9ed6-4c08-9f9f-cb7c13fc1bae",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Delete Virtual Machine",
+              "sourceStep": "/api/3/workflow_steps/2075b55a-c0b7-418b-ae38-d6f1f58a2cf3",
+              "targetStep": "/api/3/workflow_steps/d46552db-0eca-41c2-ace1-18b65f8a0833"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "7a5983d8-0f6d-415f-bbd6-c869faae1255",
+          "collection": "/api/3/workflow_collections/7114456f-dd17-4ab3-886e-539f910c7fb8",
+          "triggerLimit": null,
+          "description": "List details of all Resource's information under the subscription on Microsoft Azure Platform .",
+          "name": "List Resources",
+          "tag": "#Azure Commands",
+          "recordTags": [
+            "Azure",
+            "azure-commands"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/0e1d397d-b54a-4754-93f4-cba031c7ccd0",
+          "steps": [
+            {
+              "uuid": "0e1d397d-b54a-4754-93f4-cba031c7ccd0",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "9f7881cc-1294-42b6-a35f-883dc9be7fb8",
+                "title": "Azure Commands: List Resources",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "8f3d5b41-f39c-427d-82d2-f92e2a2190ff",
+              "@type": "WorkflowStep",
+              "name": "List Resources",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Azure Commands",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "azure-commands",
+                "operation": "list_resource",
+                "operationTitle": "List Resources",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "6c880db4-e77b-4783-a373-87eadd6f4025",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> List Resources",
+              "sourceStep": "/api/3/workflow_steps/0e1d397d-b54a-4754-93f4-cba031c7ccd0",
+              "targetStep": "/api/3/workflow_steps/8f3d5b41-f39c-427d-82d2-f92e2a2190ff"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "85d86c62-069c-4f09-b44d-950f533c2614",
+          "collection": "/api/3/workflow_collections/7114456f-dd17-4ab3-886e-539f910c7fb8",
+          "triggerLimit": null,
+          "description": "Get details of a Resource under the subscription on Microsoft Azure Platform by Resource id and other parameters.",
+          "name": "Get Resource",
+          "tag": "#Azure Commands",
+          "recordTags": [
+            "Azure",
+            "azure-commands"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/d28e57ac-7f87-46a0-b8e0-7524ad34976b",
+          "steps": [
+            {
+              "uuid": "d28e57ac-7f87-46a0-b8e0-7524ad34976b",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "09645ee9-2b44-4367-9daf-d138d94d00d1",
+                "title": "Azure Commands: Get Resource",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "6e4da3b0-b10b-4344-a50b-dbaf43718ba1",
+              "@type": "WorkflowStep",
+              "name": "Get Resource",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Azure Commands",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "azure-commands",
+                "operation": "get_resource",
+                "operationTitle": "Get Resource",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "a867d5d9-21a5-47c9-91f1-9ecbd7a5e0b4",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Resource",
+              "sourceStep": "/api/3/workflow_steps/d28e57ac-7f87-46a0-b8e0-7524ad34976b",
+              "targetStep": "/api/3/workflow_steps/6e4da3b0-b10b-4344-a50b-dbaf43718ba1"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "7a85d907-533d-4f09-bbf8-601613e6f2fa",
+          "collection": "/api/3/workflow_collections/7114456f-dd17-4ab3-886e-539f910c7fb8",
+          "triggerLimit": null,
+          "description": "Delete a Resource under the subscription on Microsoft Azure Platform on the basis of Resource id and other parameters.",
+          "name": "Delete Resource",
+          "tag": "#Azure Commands",
+          "recordTags": [
+            "Azure",
+            "azure-commands"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/03c1a562-a454-4ea7-8c23-dc905d9c639a",
+          "steps": [
+            {
+              "uuid": "03c1a562-a454-4ea7-8c23-dc905d9c639a",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "cfec4498-7269-47bc-9fbf-4f6bef58d2ca",
+                "title": "Azure Commands: Delete Resource",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "3f2b8e56-04cd-4d4f-8a57-d224e615d09e",
+              "@type": "WorkflowStep",
+              "name": "Delete Resource",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Azure Commands",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "azure-commands",
+                "operation": "delete_resource",
+                "operationTitle": "Delete Resource",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "5fe2a57b-bd22-4f72-b979-da56a9c918a5",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Delete Resource",
+              "sourceStep": "/api/3/workflow_steps/03c1a562-a454-4ea7-8c23-dc905d9c639a",
+              "targetStep": "/api/3/workflow_steps/3f2b8e56-04cd-4d4f-8a57-d224e615d09e"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "6da51af5-2582-4b26-ab5c-822ba143a62f",
+          "collection": "/api/3/workflow_collections/7114456f-dd17-4ab3-886e-539f910c7fb8",
+          "triggerLimit": null,
+          "description": "Runs a generic Azure command on the host with given parameters and values.",
+          "name": "Generic Command",
+          "tag": "#Azure Commands",
+          "recordTags": [
+            "Azure",
+            "azure-commands"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/66aadbdd-6e7f-4a4a-8ebc-5a173e9b8705",
+          "steps": [
+            {
+              "uuid": "66aadbdd-6e7f-4a4a-8ebc-5a173e9b8705",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "48b00bee-a3e2-4b04-bf94-a7ab543bef85",
+                "title": "Azure Commands: Generic Command",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "2598a7fc-0bb7-4dc7-bd79-39de79e02329",
+              "@type": "WorkflowStep",
+              "name": "Generic Command",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Azure Commands",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "azure-commands",
+                "operation": "generic_command",
+                "operationTitle": "Generic Command",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "27e82927-a45e-4a16-b38a-10c5bd11e0a1",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Generic Command",
+              "sourceStep": "/api/3/workflow_steps/66aadbdd-6e7f-4a4a-8ebc-5a173e9b8705",
+              "targetStep": "/api/3/workflow_steps/2598a7fc-0bb7-4dc7-bd79-39de79e02329"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
