@@ -12,7 +12,7 @@ from .operations import operations, _check_if_right_user, _login_az_cli
 logger = get_logger('azure-commands')
 
 
-class AzureCommandsConnector(Connector):
+class AzureCommands(Connector):
 
     def execute(self, config, operation, params, **kwargs):
         try:
