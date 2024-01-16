@@ -47,7 +47,7 @@
   "operations": [
     {
       "operation": "list_vm",
-      "title": "List Virtual Machines",
+      "title": "Get Virtual Machines List",
       "description": "List details of all VM information under the subscription on Microsoft Azure Platform .",
       "category": "investigation",
       "annotation": "list_vm",
@@ -264,7 +264,7 @@
     },
     {
       "operation": "list_resource",
-      "title": "List Resources",
+      "title": "Get Resources List",
       "description": "List details of all Resource's information under the subscription on Microsoft Azure Platform .",
       "category": "investigation",
       "annotation": "list_resource",
@@ -459,8 +459,8 @@
     },
     {
       "operation": "generic_command",
-      "title": "Generic Command",
-      "description": "Runs a generic Azure command on the host with given parameters and values.",
+      "title": "Execute Azure Command",
+      "description": "Runs a generic Azure AZ command on the host with given parameters and values.",
       "category": "investigation",
       "annotation": "generic_command",
       "enabled": true,
