@@ -68,9 +68,7 @@ def list_resource(config: dict, params: dict):
 
         query = f"resource list {_command_reformat('--location', params.get('location'))}"
         query = _handle_optional_params(params, query)
-
         exit_code, result_dict, logs = az(query)
-
         if exit_code == 0:
             return result_dict
         return logs
@@ -119,7 +117,57 @@ def generic_command(config: dict, params: dict):
 
         query = params.get('command')
         query = _handle_optional_params(params, query)
-        logger.debug(f"Query is {query}")
+        exit_code, result_dict, logs = az(query)
+
+        if exit_code == 0:
+            return result_dict
+        return logs
+    except Exception as err:
+        logger.error(str(err))
+        raise ConnectorError(str(err))
+
+
+def list_webapp(config: dict, params: dict):
+    try:
+        params = _build_payload_and_authenticate(config, params)
+
+        query = f"webapp list {_command_reformat('--resource-group', params.get('resource_group'))}"
+        query = _handle_optional_params(params, query)
+
+        exit_code, result_dict, logs = az(query)
+
+        if exit_code == 0:
+            return result_dict
+        return logs
+    except Exception as err:
+        logger.error(str(err))
+        raise ConnectorError(str(err))
+
+
+def list_ssh_keys(config: dict, params: dict):
+    try:
+        params = _build_payload_and_authenticate(config, params)
+
+        query = f"sshkey list {_command_reformat('--resource-group', params.get('resource_group'))}"
+        query = _handle_optional_params(params, query)
+
+        exit_code, result_dict, logs = az(query)
+
+        if exit_code == 0:
+            return result_dict
+        return logs
+    except Exception as err:
+        logger.error(str(err))
+        raise ConnectorError(str(err))
+
+
+def list_storage_fs_directory(config: dict, params: dict):
+    try:
+        params = _build_payload_and_authenticate(config, params)
+
+        query = f"storage fs directory list {_command_reformat('--file-system', params.get('file_system'))}"
+        query = _handle_optional_params(params, query)
+
         exit_code, result_dict, logs = az(query)
 
         if exit_code == 0:
@@ -136,7 +184,8 @@ def _login_az_cli(config: dict):
         exit_code, result_dict, logs = az(query)
         if exit_code == 0:
             return result_dict
-        return logs
+        else:
+            raise ConnectorError("Invalid Credentials")
     except Exception as err:
         logger.error(str(err))
         raise ConnectorError(str(err))
@@ -167,7 +216,9 @@ def _command_reformat(command_name: str, command_value: str) -> str:
 
 def _handle_optional_params(params: dict, query: str) -> str:
     if params.get('optional_parameters') is not None:
-        return f"{query} {params.get('optional_parameters')}"
+        query = f"{query} {params.get('optional_parameters')}"
+    logger.info(f"Query Executing: {query}")
+    return query
 
 
 operations = {
@@ -177,5 +228,8 @@ operations = {
     "list_resource": list_resource,
     "get_resource": get_resource,
     "delete_resource": delete_resource,
-    "generic_command": generic_command
+    "generic_command": generic_command,
+    "list_webapp": list_webapp,
+    "list_ssh_keys": list_ssh_keys,
+    "list_storage_fs_directory": list_storage_fs_directory
 }
