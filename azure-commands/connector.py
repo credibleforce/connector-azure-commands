@@ -25,7 +25,7 @@ class AzureCommands(Connector):
 
     def check_health(self, config):
         try:
-            logger.debug(" check_health() executing")
+            logger.info(" check_health() executing")
             _login_az_cli(config)
             status = _check_if_right_user(config)
             logger.info("status: check_health() excecuted ")
