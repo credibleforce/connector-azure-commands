@@ -19,10 +19,9 @@ def list_vm(config: dict, params: dict):
         query = _handle_optional_params(params, query)
 
         exit_code, result_dict, logs = az(query)
-
         if exit_code == 0:
             return result_dict
-        return logs
+        raise ConnectorError(str(logs))
     except Exception as err:
         logger.error(str(err))
         raise ConnectorError(str(err))
@@ -39,7 +38,7 @@ def get_vm(config: dict, params: dict):
 
         if exit_code == 0:
             return result_dict
-        return logs
+        raise ConnectorError(str(logs))
     except Exception as err:
         logger.error(str(err))
         raise ConnectorError(str(err))
@@ -49,14 +48,14 @@ def delete_vm(config: dict, params: dict):
     try:
         params = _build_payload_and_authenticate(config, params)
 
-        query = f"vm delete {_command_reformat('--ids', params.get('id'))} {_command_reformat('--resource-group', params.get('resource_group'))}"
+        query = f"vm delete {_command_reformat('--ids', params.get('id'))} {_command_reformat('--resource-group', params.get('resource_group'))} --yes"
         query = _handle_optional_params(params, query)
 
         exit_code, result_dict, logs = az(query)
 
         if exit_code == 0:
             return result_dict
-        return logs
+        raise ConnectorError(str(logs))
     except Exception as err:
         logger.error(str(err))
         raise ConnectorError(str(err))
@@ -71,7 +70,7 @@ def list_resource(config: dict, params: dict):
         exit_code, result_dict, logs = az(query)
         if exit_code == 0:
             return result_dict
-        return logs
+        raise ConnectorError(str(logs))
     except Exception as err:
         logger.error(str(err))
         raise ConnectorError(str(err))
@@ -81,14 +80,14 @@ def get_resource(config: dict, params: dict):
     try:
         params = _build_payload_and_authenticate(config, params)
 
-        query = f"resource show {_command_reformat('--ids', params.get('id'))} {_command_reformat('--resource-group', params.get('resource_group'))}"
+        query = f"resource show {_command_reformat('--ids', params.get('id'))} {_command_reformat('--resource-group', params.get('resource_group'))} {_command_reformat('--resource-type', params.get('resource_type'))} {_command_reformat('--name', params.get('name'))}"
         query = _handle_optional_params(params, query)
 
         exit_code, result_dict, logs = az(query)
 
         if exit_code == 0:
             return result_dict
-        return logs
+        raise ConnectorError(str(logs))
     except Exception as err:
         logger.error(str(err))
         raise ConnectorError(str(err))
@@ -98,14 +97,14 @@ def delete_resource(config: dict, params: dict):
     try:
         params = _build_payload_and_authenticate(config, params)
 
-        query = f"resource delete {_command_reformat('--ids', params.get('id'))} {_command_reformat('--resource-group', params.get('resource_group'))}"
+        query = f"resource delete {_command_reformat('--ids', params.get('id'))} {_command_reformat('--resource-group', params.get('resource_group'))} --yes"
         query = _handle_optional_params(params, query)
 
         exit_code, result_dict, logs = az(query)
 
         if exit_code == 0:
             return result_dict
-        return logs
+        raise ConnectorError(str(logs))
     except Exception as err:
         logger.error(str(err))
         raise ConnectorError(str(err))
@@ -121,7 +120,7 @@ def generic_command(config: dict, params: dict):
 
         if exit_code == 0:
             return result_dict
-        return logs
+        raise ConnectorError(str(logs))
     except Exception as err:
         logger.error(str(err))
         raise ConnectorError(str(err))
@@ -138,7 +137,7 @@ def list_webapp(config: dict, params: dict):
 
         if exit_code == 0:
             return result_dict
-        return logs
+        raise ConnectorError(str(logs))
     except Exception as err:
         logger.error(str(err))
         raise ConnectorError(str(err))
@@ -155,7 +154,7 @@ def list_ssh_keys(config: dict, params: dict):
 
         if exit_code == 0:
             return result_dict
-        return logs
+        raise ConnectorError(str(logs))
     except Exception as err:
         logger.error(str(err))
         raise ConnectorError(str(err))
@@ -172,7 +171,7 @@ def list_storage_fs_directory(config: dict, params: dict):
 
         if exit_code == 0:
             return result_dict
-        return logs
+        raise ConnectorError(str(logs))
     except Exception as err:
         logger.error(str(err))
         raise ConnectorError(str(err))
@@ -183,7 +182,7 @@ def _login_az_cli(config: dict):
         query = f"login --service-principal -u {config.get('client_id')} -p {config.get('client_secret')} --tenant {config.get('tenant_id')}"
         exit_code, result_dict, logs = az(query)
         if exit_code == 0:
-            return result_dict
+            return result_dict, True
         else:
             raise ConnectorError("Invalid Credentials")
     except Exception as err:
@@ -196,7 +195,12 @@ def _check_if_right_user(config: dict) -> bool:
         exit_code, result_dict, logs = az("account show")
         # On 0 (SUCCESS) check result_dict if its same as client secret, otherwise return false
         if exit_code == 0:
-            return config.get('client_id') == result_dict.get('user').get('name')
+            # Check if client_id currently logged in is equal to current configuration
+            if config.get('client_id') == result_dict.get('user').get('name'):
+                return True
+            else:
+                # If current client_id is not equal to current configuration, Run once the login.
+                return _login_az_cli(config)[1]
         return False
     except Exception as err:
         logger.error(str(err))
@@ -217,7 +221,7 @@ def _command_reformat(command_name: str, command_value: str) -> str:
 def _handle_optional_params(params: dict, query: str) -> str:
     if params.get('optional_parameters') is not None:
         query = f"{query} {params.get('optional_parameters')}"
-    logger.info(f"Query Executing: {query}")
+    logger.info(f"Query Executing is: {query}")
     return query
 
 

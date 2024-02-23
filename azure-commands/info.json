@@ -13,6 +13,16 @@
   "configuration": {
     "fields": [
       {
+        "title": "Tenant ID",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "tenant_id",
+        "tooltip": "Specify the ID of the tenant that you have been provided for your Azure Active Directory instance.",
+        "description": "Specify the ID of the tenant that you have been provided for your Azure Active Directory instance."
+      },
+      {
         "title": "Client ID",
         "required": true,
         "editable": true,
@@ -31,16 +41,6 @@
         "name": "client_secret",
         "tooltip": "Specify the Unique API Secret of the Azure AD application that is used to create an authentication token required to access the API.",
         "description": "Specify the Unique API Secret of the Azure AD application that is used to create an authentication token required to access the API. "
-      },
-      {
-        "title": "Tenant ID",
-        "required": true,
-        "editable": true,
-        "visible": true,
-        "type": "text",
-        "name": "tenant_id",
-        "tooltip": "Specify the ID of the tenant that you have been provided for your Azure Active Directory instance.",
-        "description": "Specify the ID of the tenant that you have been provided for your Azure Active Directory instance."
       }
     ]
   },
@@ -65,14 +65,14 @@
           "tooltip": "Specify the Azure command to run on the host without the az. For example if you want to run az vm list, Specify 'vm list'"
         },
         {
-          "title": "Optional Parameters",
+          "title": "Parameters",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "optional_parameters",
-          "description": "Specify the optional command name and its value through which you want to filter the results. Ex: --show-details false",
-          "tooltip": "Specify the optional command name and its value through which you want to filter the results. Ex: --show-details false"
+          "description": "Specify the parameter name and its value through which you want to filter the results. Parameters can be found at https://learn.microsoft.com/en-us/cli/azure/reference-index?view=azure-cli-latest Ex: --show-details",
+          "tooltip": "Specify the parameter name and its value through which you want to filter the results. Parameters can be found at https://learn.microsoft.com/en-us/cli/azure/reference-index?view=azure-cli-latest Ex: --show-details"
         }
       ]
     },
@@ -144,8 +144,8 @@
           "visible": true,
           "type": "text",
           "name": "optional_parameters",
-          "description": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false",
-          "tooltip": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false"
+          "description": "Specify the parameter name and its value through which you want to filter the results. Parameters can be found at https://learn.microsoft.com/en-us/cli/azure/vm?view=azure-cli-latest#az-vm-list",
+          "tooltip": "Specify the parameter name and its value through which you want to filter the results. Parameters can be found at https://learn.microsoft.com/en-us/cli/azure/vm?view=azure-cli-latest#az-vm-list"
         }
       ]
     },
@@ -227,8 +227,8 @@
           "visible": true,
           "type": "text",
           "name": "id",
-          "description": "Specify the ID of the VM whose details you want to fetch.",
-          "tooltip": "Specify the ID of the VM whose details you want to fetch."
+          "description": "Specify the ID of the VM whose details you want to fetch. Specify the resource group name whose Resource details you want to list. One or more VM Ids (space-delimited) can be provided.",
+          "tooltip": "Specify the ID of the VM whose details you want to fetch. Specify the resource group name whose Resource details you want to list. One or more VM Ids (space-delimited) can be provided."
         },
         {
           "title": "Resource Group",
@@ -247,8 +247,8 @@
           "visible": true,
           "type": "text",
           "name": "optional_parameters",
-          "description": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false",
-          "tooltip": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false"
+          "description": "Specify the parameter name and its value through which you want to filter the results. Parameters can be found at https://learn.microsoft.com/en-us/cli/azure/vm?view=azure-cli-latest#az-vm-show",
+          "tooltip": "Specify the parameter name and its value through which you want to filter the results. Parameters can be found at https://learn.microsoft.com/en-us/cli/azure/vm?view=azure-cli-latest#az-vm-show"
         }
       ]
     },
@@ -288,8 +288,8 @@
           "visible": true,
           "type": "text",
           "name": "optional_parameters",
-          "description": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false",
-          "tooltip": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false"
+          "description": "Specify the parameter name and its value through which you want to filter the results. Parameters can be found at https://learn.microsoft.com/en-us/cli/azure/vm?view=azure-cli-latest#az-vm-delete",
+          "tooltip": "Specify the parameter name and its value through which you want to filter the results. Parameters can be found at https://learn.microsoft.com/en-us/cli/azure/vm?view=azure-cli-latest#az-vm-delete"
         }
       ]
     },
@@ -345,8 +345,8 @@
           "visible": true,
           "type": "text",
           "name": "optional_parameters",
-          "description": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false",
-          "tooltip": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false"
+          "description": "Specify the parameter name and its value through which you want to filter the results.Parameters can be found at https://learn.microsoft.com/en-us/cli/azure/resource?view=azure-cli-latest#az-resource-list%22 Ex: --show-details",
+          "tooltip": "Specify the parameter name and its value through which you want to filter the results.Parameters can be found at https://learn.microsoft.com/en-us/cli/azure/resource?view=azure-cli-latest#az-resource-list%22 Ex: --show-details"
         }
       ]
     },
@@ -416,24 +416,63 @@
       },
       "parameters": [
         {
-          "title": "Resource ID",
+          "title": "Filter by",
+          "type": "select",
+          "name": "input",
           "required": true,
-          "editable": true,
           "visible": true,
-          "type": "text",
-          "name": "id",
-          "description": "Specify the ID of the Resource whose details you want to fetch.",
-          "tooltip": "Specify the ID of the Resource whose details you want to fetch."
-        },
-        {
-          "title": "Resource Group",
-          "required": false,
           "editable": true,
-          "visible": true,
-          "type": "text",
-          "name": "resource_group",
-          "description": "Specify the resource group name whose Resource details you want to list.",
-          "tooltip": "Specify the resource group name whose Resource details you want to list."
+          "options": [
+            "Resource ID",
+            "Resource Group",
+            "File IRI"
+          ],
+          "onchange": {
+            "Resource ID": [
+              {
+                "title": "Resource ID",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "type": "text",
+                "name": "id",
+                "description": "Specify the ID of the Resource whose details you want to fetch. One or more resource IDs (space-delimited) can be provided.",
+                "tooltip": "Specify the ID of the Resource whose details you want to fetch. One or more resource IDs (space-delimited) can be provided."
+              }
+            ],
+            "Resource Group": [
+              {
+                "title": "Resource Group",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "type": "text",
+                "name": "resource_group",
+                "description": "Specify the resource group name whose Resource details you want to list. One or more resource groups (space-delimited) can be provided.",
+                "tooltip": "Specify the resource group name whose Resource details you want to list. One or more resource groups (space-delimited) can be provided."
+              },
+              {
+                "title": "Resource Type",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "type": "text",
+                "name": "resource_type",
+                "description": "Specify the resource type whose Resource details you want to list.The resource type (Ex: 'resC'), can also accept namespace/type format (Ex: 'Microsoft.Provider/resC').",
+                "tooltip": "Specify the resource type whose Resource details you want to list.The resource type (Ex: 'resC'), can also accept namespace/type format (Ex: 'Microsoft.Provider/resC')."
+              },
+              {
+                "title": "Name",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "type": "text",
+                "name": "name",
+                "description": "Specify the resource name whose Resource details you want to list. Ex: myC",
+                "tooltip": "Specify the resource name whose Resource details you want to list. Ex: myC"
+              }
+            ]
+          }
         },
         {
           "title": "Optional Parameters",
@@ -442,8 +481,8 @@
           "visible": true,
           "type": "text",
           "name": "optional_parameters",
-          "description": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false",
-          "tooltip": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false"
+          "description": "Specify the parameter name and its value through which you want to filter the results. Parameters can be found at https://learn.microsoft.com/en-us/cli/azure/resource?view=azure-cli-latest#az-resource-show",
+          "tooltip": "Specify the parameter name and its value through which you want to filter the results. Parameters can be found at https://learn.microsoft.com/en-us/cli/azure/resource?view=azure-cli-latest#az-resource-show"
         }
       ]
     },
@@ -483,8 +522,8 @@
           "visible": true,
           "type": "text",
           "name": "optional_parameters",
-          "description": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false",
-          "tooltip": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false"
+          "description": "Specify the parameter name and its value through which you want to filter the results.Parameters can be found at https://learn.microsoft.com/en-us/cli/azure/resource?view=azure-cli-latest#az-resource-delete",
+          "tooltip": "Specify the parameter name and its value through which you want to filter the results.Parameters can be found at https://learn.microsoft.com/en-us/cli/azure/resource?view=azure-cli-latest#az-resource-delete"
         }
       ]
     },
@@ -540,8 +579,8 @@
           "visible": true,
           "type": "text",
           "name": "optional_parameters",
-          "description": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false",
-          "tooltip": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false"
+          "description": "Specify the parameter name and its value through which you want to filter the results. Parameters can be found at https://learn.microsoft.com/en-us/cli/azure/webapp?view=azure-cli-latest#az-webapp-list",
+          "tooltip": "Specify the parameter name and its value through which you want to filter the results. Parameters can be found at https://learn.microsoft.com/en-us/cli/azure/webapp?view=azure-cli-latest#az-webapp-list"
         }
       ]
     },
@@ -583,8 +622,8 @@
           "visible": true,
           "type": "text",
           "name": "optional_parameters",
-          "description": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false",
-          "tooltip": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false"
+          "description": "Specify the parameter name and its value through which you want to filter the results. Parameters can be found at https://learn.microsoft.com/en-us/cli/azure/sshkey?view=azure-cli-latest#az-sshkey-list",
+          "tooltip": "Specify the parameter name and its value through which you want to filter the results. Parameters can be found at https://learn.microsoft.com/en-us/cli/azure/sshkey?view=azure-cli-latest#az-sshkey-list"
         }
       ]
     },
@@ -640,8 +679,8 @@
           "visible": true,
           "type": "text",
           "name": "optional_parameters",
-          "description": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false",
-          "tooltip": "Specify the command name and its value through which you want to filter the results. Ex: --show-details false"
+          "description": "Specify the parameter name and its value through which you want to filter the results. Parameters can be found at https://learn.microsoft.com/en-us/cli/azure/storage/fs/directory?view=azure-cli-latest#az-storage-fs-directory-list",
+          "tooltip": "Specify the parameter name and its value through which you want to filter the results. Parameters can be found at https://learn.microsoft.com/en-us/cli/azure/storage/fs/directory?view=azure-cli-latest#az-storage-fs-directory-list"
         }
       ]
     }
