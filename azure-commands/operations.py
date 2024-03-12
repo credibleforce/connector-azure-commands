@@ -31,7 +31,7 @@ def get_vm(config: dict, params: dict):
     try:
         params = _build_payload_and_authenticate(config, params)
 
-        query = f"vm show {_command_reformat('--ids', params.get('id'))} {_command_reformat('--resource-group', params.get('resource_group'))}"
+        query = f"vm show {_command_reformat('--ids', params.get('id'))} {_command_reformat('--resource-group', params.get('resource_group'))} {_command_reformat('--name', params.get('name'))}"
         query = _handle_optional_params(params, query)
 
         exit_code, result_dict, logs = az(query)
@@ -48,7 +48,7 @@ def delete_vm(config: dict, params: dict):
     try:
         params = _build_payload_and_authenticate(config, params)
 
-        query = f"vm delete {_command_reformat('--ids', params.get('id'))} {_command_reformat('--resource-group', params.get('resource_group'))} --yes"
+        query = f"vm delete {_command_reformat('--ids', params.get('id'))} {_command_reformat('--resource-group', params.get('resource_group'))} {_command_reformat('--name', params.get('name'))} --yes"
         query = _handle_optional_params(params, query)
 
         exit_code, result_dict, logs = az(query)
@@ -64,7 +64,6 @@ def delete_vm(config: dict, params: dict):
 def list_resource(config: dict, params: dict):
     try:
         params = _build_payload_and_authenticate(config, params)
-
         query = f"resource list {_command_reformat('--location', params.get('location'))}"
         query = _handle_optional_params(params, query)
         exit_code, result_dict, logs = az(query)
@@ -97,7 +96,7 @@ def delete_resource(config: dict, params: dict):
     try:
         params = _build_payload_and_authenticate(config, params)
 
-        query = f"resource delete {_command_reformat('--ids', params.get('id'))} {_command_reformat('--resource-group', params.get('resource_group'))} --yes"
+        query = f"resource delete {_command_reformat('--ids', params.get('id'))} {_command_reformat('--resource-group', params.get('resource_group'))} {_command_reformat('--resource-type', params.get('resource_type'))} {_command_reformat('--name', params.get('name'))}"
         query = _handle_optional_params(params, query)
 
         exit_code, result_dict, logs = az(query)

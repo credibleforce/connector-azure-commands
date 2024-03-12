@@ -2,16 +2,16 @@
   "type": "workflow_collections",
   "data": [
     {
-      "uuid": "a07c43d1-a391-486d-a8e8-349d3633d439",
+      "uuid": "f6d0a396-30a6-47dd-b183-002319a2e239",
       "@type": "WorkflowCollection",
       "workflows": [
         {
           "@type": "Workflow",
-          "uuid": "c96b697f-3945-4a53-b547-331b7b3cb540",
-          "collection": "/api/3/workflow_collections/a07c43d1-a391-486d-a8e8-349d3633d439",
+          "uuid": "cd170c79-cea2-4c74-aaac-f0247e1b6110",
+          "collection": "/api/3/workflow_collections/f6d0a396-30a6-47dd-b183-002319a2e239",
           "steps": [
             {
-              "uuid": "e170f48b-fea2-4ec8-88d0-d65ab441fc03",
+              "uuid": "498af753-50a0-442e-9a51-a8bb1525c868",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -28,7 +28,7 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "e340e79e-853d-48f4-8099-75847368ec39",
+              "uuid": "9f662e75-5641-4683-9702-35a7d2604e86",
               "@type": "WorkflowStep",
               "name": "Execute Azure Command",
               "description": null,
@@ -63,26 +63,26 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/e170f48b-fea2-4ec8-88d0-d65ab441fc03",
+          "triggerStep": "/api/3/workflow_steps/498af753-50a0-442e-9a51-a8bb1525c868",
           "routes": [
             {
-              "uuid": "6ec8efc5-ef41-4ba7-844e-99f5a0a50432",
+              "uuid": "1658a6e7-a608-4637-bf3e-f20eff634abe",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Execute Azure Command",
-              "sourceStep": "/api/3/workflow_steps/e170f48b-fea2-4ec8-88d0-d65ab441fc03",
-              "targetStep": "/api/3/workflow_steps/e340e79e-853d-48f4-8099-75847368ec39"
+              "sourceStep": "/api/3/workflow_steps/498af753-50a0-442e-9a51-a8bb1525c868",
+              "targetStep": "/api/3/workflow_steps/9f662e75-5641-4683-9702-35a7d2604e86"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "4af7c4e5-9e9e-447f-a5c4-2e8e8b090df8",
-          "collection": "/api/3/workflow_collections/a07c43d1-a391-486d-a8e8-349d3633d439",
+          "uuid": "c33d2533-70f7-499b-93a7-97ff96d8d16b",
+          "collection": "/api/3/workflow_collections/f6d0a396-30a6-47dd-b183-002319a2e239",
           "steps": [
             {
-              "uuid": "3f66b770-3986-4e5c-8ecc-51356f3f0e1e",
+              "uuid": "360b45d0-3cf4-48c8-a1e7-5c3b29f6f0e3",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -99,7 +99,7 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "84c19534-31bd-452c-aff6-986b4d9c8045",
+              "uuid": "a1aa2a70-15eb-4f74-ae08-fd430871518a",
               "@type": "WorkflowStep",
               "name": "Get Virtual Machines List",
               "description": null,
@@ -134,26 +134,26 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/3f66b770-3986-4e5c-8ecc-51356f3f0e1e",
+          "triggerStep": "/api/3/workflow_steps/360b45d0-3cf4-48c8-a1e7-5c3b29f6f0e3",
           "routes": [
             {
-              "uuid": "b26bd37b-7b78-4d1f-bdab-ae09ef2372e8",
+              "uuid": "c9e0e1c2-cae7-41c6-aa17-5d86ccba70c2",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Virtual Machines List",
-              "sourceStep": "/api/3/workflow_steps/3f66b770-3986-4e5c-8ecc-51356f3f0e1e",
-              "targetStep": "/api/3/workflow_steps/84c19534-31bd-452c-aff6-986b4d9c8045"
+              "sourceStep": "/api/3/workflow_steps/360b45d0-3cf4-48c8-a1e7-5c3b29f6f0e3",
+              "targetStep": "/api/3/workflow_steps/a1aa2a70-15eb-4f74-ae08-fd430871518a"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "61d042f0-d5ee-4747-8f3d-c20af8b28e66",
-          "collection": "/api/3/workflow_collections/a07c43d1-a391-486d-a8e8-349d3633d439",
+          "uuid": "f6af2bd3-5ec0-4aee-a525-599bf35849a2",
+          "collection": "/api/3/workflow_collections/f6d0a396-30a6-47dd-b183-002319a2e239",
           "steps": [
             {
-              "uuid": "a6b6163a-1cd0-43e4-a982-126aab6a1b77",
+              "uuid": "954d42ea-bdf0-4fb8-9c7a-75696b6fdc47",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -170,7 +170,7 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "b6d944eb-52f3-4595-9bc2-337b68e5d6d5",
+              "uuid": "051a514f-8e2b-4b66-b726-c734c9fe50e7",
               "@type": "WorkflowStep",
               "name": "Get Virtual Machine",
               "description": null,
@@ -179,8 +179,7 @@
                 "name": "Azure Commands",
                 "config": "",
                 "params": {
-                  "id": "",
-                  "resource_group": "",
+                  "input": "",
                   "optional_parameters": ""
                 },
                 "version": "1.0.0",
@@ -206,26 +205,26 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/a6b6163a-1cd0-43e4-a982-126aab6a1b77",
+          "triggerStep": "/api/3/workflow_steps/954d42ea-bdf0-4fb8-9c7a-75696b6fdc47",
           "routes": [
             {
-              "uuid": "4274e457-79be-49e0-905c-461addc8d0bc",
+              "uuid": "e0707234-0931-4cc0-a6a5-6f81ca5ec2b9",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Virtual Machine",
-              "sourceStep": "/api/3/workflow_steps/a6b6163a-1cd0-43e4-a982-126aab6a1b77",
-              "targetStep": "/api/3/workflow_steps/b6d944eb-52f3-4595-9bc2-337b68e5d6d5"
+              "sourceStep": "/api/3/workflow_steps/954d42ea-bdf0-4fb8-9c7a-75696b6fdc47",
+              "targetStep": "/api/3/workflow_steps/051a514f-8e2b-4b66-b726-c734c9fe50e7"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "6eae2283-0b10-4c63-b6b2-9b16f18e72d1",
-          "collection": "/api/3/workflow_collections/a07c43d1-a391-486d-a8e8-349d3633d439",
+          "uuid": "fc7a730d-2793-46ca-9fca-65442178baef",
+          "collection": "/api/3/workflow_collections/f6d0a396-30a6-47dd-b183-002319a2e239",
           "steps": [
             {
-              "uuid": "cbd02871-e953-4db0-b223-96d559612d46",
+              "uuid": "0c053200-badb-4ddc-a042-1bec590e6daf",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -242,7 +241,7 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "aaa3a9e8-0b61-4a5d-af48-0e4b223e041b",
+              "uuid": "3c272fc5-b365-4858-a3c4-3bb8cc075bce",
               "@type": "WorkflowStep",
               "name": "Delete Virtual Machine",
               "description": null,
@@ -251,8 +250,7 @@
                 "name": "Azure Commands",
                 "config": "",
                 "params": {
-                  "id": "",
-                  "resource_group": "",
+                  "input": "",
                   "optional_parameters": ""
                 },
                 "version": "1.0.0",
@@ -278,26 +276,26 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/cbd02871-e953-4db0-b223-96d559612d46",
+          "triggerStep": "/api/3/workflow_steps/0c053200-badb-4ddc-a042-1bec590e6daf",
           "routes": [
             {
-              "uuid": "467c160b-a0d4-476a-8a70-21b5726f4a1b",
+              "uuid": "d9f5897c-f30f-48bf-a496-6a3aa2c191f9",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Delete Virtual Machine",
-              "sourceStep": "/api/3/workflow_steps/cbd02871-e953-4db0-b223-96d559612d46",
-              "targetStep": "/api/3/workflow_steps/aaa3a9e8-0b61-4a5d-af48-0e4b223e041b"
+              "sourceStep": "/api/3/workflow_steps/0c053200-badb-4ddc-a042-1bec590e6daf",
+              "targetStep": "/api/3/workflow_steps/3c272fc5-b365-4858-a3c4-3bb8cc075bce"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "9510181c-3186-490e-9e3b-3880e8b97bdf",
-          "collection": "/api/3/workflow_collections/a07c43d1-a391-486d-a8e8-349d3633d439",
+          "uuid": "c7f8dd2a-7272-48da-b173-062485ffd2c9",
+          "collection": "/api/3/workflow_collections/f6d0a396-30a6-47dd-b183-002319a2e239",
           "steps": [
             {
-              "uuid": "e4b91a7d-e436-4d11-ac0e-232b3c045dc6",
+              "uuid": "30d710fd-3741-4e1a-b363-a149eed0aa37",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -314,7 +312,7 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "984b585c-e55b-471c-8336-ac8dfcce1d29",
+              "uuid": "336d543f-027f-4a05-bd11-fca73628c11f",
               "@type": "WorkflowStep",
               "name": "Get Resources List",
               "description": null,
@@ -349,26 +347,26 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/e4b91a7d-e436-4d11-ac0e-232b3c045dc6",
+          "triggerStep": "/api/3/workflow_steps/30d710fd-3741-4e1a-b363-a149eed0aa37",
           "routes": [
             {
-              "uuid": "584b86bf-32fd-4763-8943-1825c076f66f",
+              "uuid": "c6fac8d0-b22a-47dc-9a17-bcb60e20e340",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Resources List",
-              "sourceStep": "/api/3/workflow_steps/e4b91a7d-e436-4d11-ac0e-232b3c045dc6",
-              "targetStep": "/api/3/workflow_steps/984b585c-e55b-471c-8336-ac8dfcce1d29"
+              "sourceStep": "/api/3/workflow_steps/30d710fd-3741-4e1a-b363-a149eed0aa37",
+              "targetStep": "/api/3/workflow_steps/336d543f-027f-4a05-bd11-fca73628c11f"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "b93fb8c0-11b6-44f5-8cc4-f14431aed663",
-          "collection": "/api/3/workflow_collections/a07c43d1-a391-486d-a8e8-349d3633d439",
+          "uuid": "e44e4c9a-a1ef-42c7-b401-b30f1c226c45",
+          "collection": "/api/3/workflow_collections/f6d0a396-30a6-47dd-b183-002319a2e239",
           "steps": [
             {
-              "uuid": "ac9dc094-c86a-494b-907f-6744554cf1b4",
+              "uuid": "5e8a4931-2493-49ee-accb-46096cfafec3",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -385,7 +383,7 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "011cdc1a-1297-4858-99a8-f5a5eae3ef17",
+              "uuid": "9211732f-9f32-477f-b75f-ead50e10d1d6",
               "@type": "WorkflowStep",
               "name": "Get Resource",
               "description": null,
@@ -420,26 +418,26 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/ac9dc094-c86a-494b-907f-6744554cf1b4",
+          "triggerStep": "/api/3/workflow_steps/5e8a4931-2493-49ee-accb-46096cfafec3",
           "routes": [
             {
-              "uuid": "698fbf1f-7ca7-4cd6-97b2-e8aa54639495",
+              "uuid": "08549ac6-be1c-4b30-ba88-e948041d0af4",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Resource",
-              "sourceStep": "/api/3/workflow_steps/ac9dc094-c86a-494b-907f-6744554cf1b4",
-              "targetStep": "/api/3/workflow_steps/011cdc1a-1297-4858-99a8-f5a5eae3ef17"
+              "sourceStep": "/api/3/workflow_steps/5e8a4931-2493-49ee-accb-46096cfafec3",
+              "targetStep": "/api/3/workflow_steps/9211732f-9f32-477f-b75f-ead50e10d1d6"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "91fab43a-8768-4581-9631-fbab909c7a6a",
-          "collection": "/api/3/workflow_collections/a07c43d1-a391-486d-a8e8-349d3633d439",
+          "uuid": "815d00e6-67af-419f-8cfc-d041bbec969c",
+          "collection": "/api/3/workflow_collections/f6d0a396-30a6-47dd-b183-002319a2e239",
           "steps": [
             {
-              "uuid": "0d16e99d-aa65-4a2b-b21d-99dc43b12712",
+              "uuid": "29cffff7-b28e-4a41-adf5-f1475afd1e18",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -456,7 +454,7 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "b3115600-88cd-4020-9bc7-a5873c19a267",
+              "uuid": "2ff449a7-92b5-45d1-8801-9778eb6e238c",
               "@type": "WorkflowStep",
               "name": "Delete Resource",
               "description": null,
@@ -465,8 +463,7 @@
                 "name": "Azure Commands",
                 "config": "",
                 "params": {
-                  "id": "",
-                  "resource_group": "",
+                  "input": "",
                   "optional_parameters": ""
                 },
                 "version": "1.0.0",
@@ -492,26 +489,26 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/0d16e99d-aa65-4a2b-b21d-99dc43b12712",
+          "triggerStep": "/api/3/workflow_steps/29cffff7-b28e-4a41-adf5-f1475afd1e18",
           "routes": [
             {
-              "uuid": "1aa697f6-2437-486a-944c-71bd344af175",
+              "uuid": "67aa17bb-2e97-4e6a-8318-dff3fd5c2b9b",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Delete Resource",
-              "sourceStep": "/api/3/workflow_steps/0d16e99d-aa65-4a2b-b21d-99dc43b12712",
-              "targetStep": "/api/3/workflow_steps/b3115600-88cd-4020-9bc7-a5873c19a267"
+              "sourceStep": "/api/3/workflow_steps/29cffff7-b28e-4a41-adf5-f1475afd1e18",
+              "targetStep": "/api/3/workflow_steps/2ff449a7-92b5-45d1-8801-9778eb6e238c"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "fa81e38a-31bb-4a17-b0bc-a402c76dd3a4",
-          "collection": "/api/3/workflow_collections/a07c43d1-a391-486d-a8e8-349d3633d439",
+          "uuid": "7db9c9ea-f05c-4a50-8fc7-766f8217c80e",
+          "collection": "/api/3/workflow_collections/f6d0a396-30a6-47dd-b183-002319a2e239",
           "steps": [
             {
-              "uuid": "f945693d-7af7-4db8-be84-4bfe13952e2e",
+              "uuid": "bf4a8cd8-bfbf-47f8-9460-970f6eff1acd",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -528,7 +525,7 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "426693bd-733a-499f-a37a-6d196a80f97c",
+              "uuid": "2fea536e-53ac-47fa-a09b-289632c6b6a2",
               "@type": "WorkflowStep",
               "name": "Get Webapp List",
               "description": null,
@@ -563,26 +560,26 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/f945693d-7af7-4db8-be84-4bfe13952e2e",
+          "triggerStep": "/api/3/workflow_steps/bf4a8cd8-bfbf-47f8-9460-970f6eff1acd",
           "routes": [
             {
-              "uuid": "7c8f0e10-f470-467c-981c-d8280db5e6c1",
+              "uuid": "fb55a471-0c16-470c-b292-1e7831aa35b6",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Webapp List",
-              "sourceStep": "/api/3/workflow_steps/f945693d-7af7-4db8-be84-4bfe13952e2e",
-              "targetStep": "/api/3/workflow_steps/426693bd-733a-499f-a37a-6d196a80f97c"
+              "sourceStep": "/api/3/workflow_steps/bf4a8cd8-bfbf-47f8-9460-970f6eff1acd",
+              "targetStep": "/api/3/workflow_steps/2fea536e-53ac-47fa-a09b-289632c6b6a2"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "82e818b6-9d6e-4b25-917b-5e6ca442bdb2",
-          "collection": "/api/3/workflow_collections/a07c43d1-a391-486d-a8e8-349d3633d439",
+          "uuid": "5352badf-dde2-4631-8996-994b284ea2f1",
+          "collection": "/api/3/workflow_collections/f6d0a396-30a6-47dd-b183-002319a2e239",
           "steps": [
             {
-              "uuid": "2751883a-4cab-40e9-bb89-a36e89d50d5d",
+              "uuid": "ed6e6511-4d2e-46c5-a368-4625dcaccd44",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -599,7 +596,7 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "9c2126a8-b97d-4eed-8067-7eae914a96fc",
+              "uuid": "c690ad06-bfbe-4af8-8610-03db8f9dd566",
               "@type": "WorkflowStep",
               "name": "Get SSH Keys List",
               "description": null,
@@ -634,26 +631,26 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/2751883a-4cab-40e9-bb89-a36e89d50d5d",
+          "triggerStep": "/api/3/workflow_steps/ed6e6511-4d2e-46c5-a368-4625dcaccd44",
           "routes": [
             {
-              "uuid": "d248bacd-c2b5-4e80-8e22-63747e208285",
+              "uuid": "073c98f0-3b92-4cb1-86e9-4d5e6e92fe86",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get SSH Keys List",
-              "sourceStep": "/api/3/workflow_steps/2751883a-4cab-40e9-bb89-a36e89d50d5d",
-              "targetStep": "/api/3/workflow_steps/9c2126a8-b97d-4eed-8067-7eae914a96fc"
+              "sourceStep": "/api/3/workflow_steps/ed6e6511-4d2e-46c5-a368-4625dcaccd44",
+              "targetStep": "/api/3/workflow_steps/c690ad06-bfbe-4af8-8610-03db8f9dd566"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "15be2a00-9480-4bd6-9460-a0956d7d5dde",
-          "collection": "/api/3/workflow_collections/a07c43d1-a391-486d-a8e8-349d3633d439",
+          "uuid": "77076f64-7dc4-433a-8c54-c0c2be3a6cc6",
+          "collection": "/api/3/workflow_collections/f6d0a396-30a6-47dd-b183-002319a2e239",
           "steps": [
             {
-              "uuid": "7bde1aa6-da1d-4ec9-97d4-e140280ef1a1",
+              "uuid": "8c04b053-8e6e-4cc9-952d-27267248bd8a",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -670,7 +667,7 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "97270542-1abc-427e-a018-d8dbc1c2f3af",
+              "uuid": "9efc67ee-83c8-4a4e-9464-c58446b6ed81",
               "@type": "WorkflowStep",
               "name": "Get Storage FS Directory List",
               "description": null,
@@ -705,16 +702,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/7bde1aa6-da1d-4ec9-97d4-e140280ef1a1",
+          "triggerStep": "/api/3/workflow_steps/8c04b053-8e6e-4cc9-952d-27267248bd8a",
           "routes": [
             {
-              "uuid": "0f7d2bc0-581c-4128-b7c2-78f94641b6ed",
+              "uuid": "200bd618-f8b3-426e-ad37-132e956939ef",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Storage FS Directory List",
-              "sourceStep": "/api/3/workflow_steps/7bde1aa6-da1d-4ec9-97d4-e140280ef1a1",
-              "targetStep": "/api/3/workflow_steps/97270542-1abc-427e-a018-d8dbc1c2f3af"
+              "sourceStep": "/api/3/workflow_steps/8c04b053-8e6e-4cc9-952d-27267248bd8a",
+              "targetStep": "/api/3/workflow_steps/9efc67ee-83c8-4a4e-9464-c58446b6ed81"
             }
           ]
         }

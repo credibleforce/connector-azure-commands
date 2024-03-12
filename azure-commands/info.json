@@ -221,24 +221,52 @@
       },
       "parameters": [
         {
-          "title": "VM ID",
+          "title": "Filter by",
+          "type": "select",
+          "name": "input",
           "required": true,
-          "editable": true,
           "visible": true,
-          "type": "text",
-          "name": "id",
-          "description": "Specify the ID of the VM whose details you want to fetch. Specify the resource group name whose Resource details you want to list. One or more VM Ids (space-delimited) can be provided.",
-          "tooltip": "Specify the ID of the VM whose details you want to fetch. Specify the resource group name whose Resource details you want to list. One or more VM Ids (space-delimited) can be provided."
-        },
-        {
-          "title": "Resource Group",
-          "required": false,
           "editable": true,
-          "visible": true,
-          "type": "text",
-          "name": "resource_group",
-          "description": "Specify the resource group name whose VM details you want to list.",
-          "tooltip": "Specify the resource group name whose VM details you want to list."
+          "options": [
+            "VM ID",
+            "Resource Group"
+          ],
+          "onchange": {
+            "VM ID": [
+              {
+                "title": "VM ID",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "type": "text",
+                "name": "id",
+                "description": "Specify the ID of the VM whose details you want to fetch. One or more VM IDs (space-delimited) can be provided.",
+                "tooltip": "Specify the ID of the VM whose details you want to fetch. One or more VM IDs (space-delimited) can be provided."
+              }
+            ],
+            "Resource Group": [
+              {
+                "title": "Resource Group",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "type": "text",
+                "name": "resource_group",
+                "description": "Specify the resource group name whose VM details you want to list. One or more resource groups (space-delimited) can be provided.",
+                "tooltip": "Specify the resource group name whose VM details you want to list. One or more resource groups (space-delimited) can be provided."
+              },
+              {
+                "title": "Name",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "type": "text",
+                "name": "name",
+                "description": "Specify the VM name whose details you want to fetch. Ex: MyVm",
+                "tooltip": "Specify the VM name whose details you want to fetch. Ex: MyVm"
+              }
+            ]
+          }
         },
         {
           "title": "Optional Parameters",
@@ -262,24 +290,52 @@
       "output_schema": {},
       "parameters": [
         {
-          "title": "VM ID",
+          "title": "Filter by",
+          "type": "select",
+          "name": "input",
           "required": true,
-          "editable": true,
           "visible": true,
-          "type": "text",
-          "name": "id",
-          "description": "Specify the ID of the VM which you want to delete.",
-          "tooltip": "Specify the ID of the VM which you want to delete."
-        },
-        {
-          "title": "Resource Group",
-          "required": false,
           "editable": true,
-          "visible": true,
-          "type": "text",
-          "name": "resource_group",
-          "description": "Specify the resource group name whose VM details you want to list.",
-          "tooltip": "Specify the resource group name whose VM details you want to list."
+          "options": [
+            "VM ID",
+            "Resource Group"
+          ],
+          "onchange": {
+            "VM ID": [
+              {
+                "title": "VM ID",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "type": "text",
+                "name": "id",
+                "description": "Specify the ID of the VM which you want to delete. One or more VM IDs (space-delimited) can be provided.",
+                "tooltip": "Specify the ID of the VM which you want to delete. One or more VM IDs (space-delimited) can be provided."
+              }
+            ],
+            "Resource Group": [
+              {
+                "title": "Resource Group",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "type": "text",
+                "name": "resource_group",
+                "description": "Specify the resource group name whose VM details you want to delete. One or more resource groups (space-delimited) can be provided.",
+                "tooltip": "Specify the resource group name whose VM details you want to delete. One or more resource groups (space-delimited) can be provided."
+              },
+              {
+                "title": "Name",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "type": "text",
+                "name": "name",
+                "description": "Specify the VM name which you want to delete. Ex: MyVm",
+                "tooltip": "Specify the VM name which you want to delete. Ex: MyVm"
+              }
+            ]
+          }
         },
         {
           "title": "Optional Parameters",
@@ -424,8 +480,7 @@
           "editable": true,
           "options": [
             "Resource ID",
-            "Resource Group",
-            "File IRI"
+            "Resource Group"
           ],
           "onchange": {
             "Resource ID": [
@@ -496,24 +551,62 @@
       "output_schema": {},
       "parameters": [
         {
-          "title": "Resource ID",
+          "title": "Filter by",
+          "type": "select",
+          "name": "input",
           "required": true,
-          "editable": true,
           "visible": true,
-          "type": "text",
-          "name": "id",
-          "description": "Specify the ID of the Resource which you want to delete.",
-          "tooltip": "Specify the ID of the Resource which you want to delete."
-        },
-        {
-          "title": "Resource Group",
-          "required": false,
           "editable": true,
-          "visible": true,
-          "type": "text",
-          "name": "resource_group",
-          "description": "Specify the resource group name whose Resource details you want to list.",
-          "tooltip": "Specify the resource group name whose Resource details you want to list."
+          "options": [
+            "Resource ID",
+            "Resource Group"
+          ],
+          "onchange": {
+            "Resource ID": [
+              {
+                "title": "Resource ID",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "type": "text",
+                "name": "id",
+                "description": "Specify the ID of the Resource which you want to delete. One or more resource IDs (space-delimited) can be provided.",
+                "tooltip": "Specify the ID of the Resource which you want to delete. One or more resource IDs (space-delimited) can be provided."
+              }
+            ],
+            "Resource Group": [
+              {
+                "title": "Resource Group",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "type": "text",
+                "name": "resource_group",
+                "description": "Specify the resource group name whose Resource you want to delete. One or more resource groups (space-delimited) can be provided.",
+                "tooltip": "Specify the resource group name whose Resource you want to delete. One or more resource groups (space-delimited) can be provided."
+              },
+              {
+                "title": "Resource Type",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "type": "text",
+                "name": "resource_type",
+                "description": "Specify the resource type whose Resource details you want to delete.The resource type (Ex: 'resC'), can also accept namespace/type format (Ex: 'Microsoft.Provider/resC').",
+                "tooltip": "Specify the resource type whose Resource details you want to delete.The resource type (Ex: 'resC'), can also accept namespace/type format (Ex: 'Microsoft.Provider/resC')."
+              },
+              {
+                "title": "Name",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "type": "text",
+                "name": "name",
+                "description": "Specify the resource name whose Resource details you want to delete. Ex: myC",
+                "tooltip": "Specify the resource name whose Resource details you want to delete. Ex: myC"
+              }
+            ]
+          }
         },
         {
           "title": "Optional Parameters",
