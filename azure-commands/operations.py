@@ -210,7 +210,7 @@ def _build_payload_and_authenticate(config: dict, params: dict) -> dict:
     if not _check_if_right_user(config):
         raise ConnectorError(f"Wrong/Someone else's User credentials for {config.get('client_id')}")
 
-    return {key: val for key, val in params.items() if val is not None and val != ''}
+    return {key: val for key, val in params.items() if isinstance(val, (bool, int)) or val}
 
 
 def _command_reformat(command_name: str, command_value: str) -> str:
