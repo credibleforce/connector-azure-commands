@@ -2,16 +2,16 @@
   "type": "workflow_collections",
   "data": [
     {
-      "uuid": "f6d0a396-30a6-47dd-b183-002319a2e239",
+      "uuid": "a4853588-4b54-4e99-94ed-ca98a470e535",
       "@type": "WorkflowCollection",
       "workflows": [
         {
           "@type": "Workflow",
-          "uuid": "cd170c79-cea2-4c74-aaac-f0247e1b6110",
-          "collection": "/api/3/workflow_collections/f6d0a396-30a6-47dd-b183-002319a2e239",
+          "uuid": "5a17172b-5eaa-4813-8e98-d9c437b710a6",
+          "collection": "/api/3/workflow_collections/a4853588-4b54-4e99-94ed-ca98a470e535",
           "steps": [
             {
-              "uuid": "498af753-50a0-442e-9a51-a8bb1525c868",
+              "uuid": "88fa1c02-d584-4034-a1cc-c5a92b9cbe52",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -28,7 +28,7 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "9f662e75-5641-4683-9702-35a7d2604e86",
+              "uuid": "cef3281d-105d-4bb1-959f-e49f731ceade",
               "@type": "WorkflowStep",
               "name": "Execute Azure Command",
               "description": null,
@@ -51,7 +51,7 @@
             }
           ],
           "triggerLimit": null,
-          "description": "Runs a generic Azure AZ command on the host with given parameters and values.",
+          "description": "Executes an Azure command on the host based on the command and other input parameters that you have specified.",
           "name": "Execute Azure Command",
           "tag": "#Azure Commands",
           "recordTags": [
@@ -63,26 +63,26 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/498af753-50a0-442e-9a51-a8bb1525c868",
+          "triggerStep": "/api/3/workflow_steps/88fa1c02-d584-4034-a1cc-c5a92b9cbe52",
           "routes": [
             {
-              "uuid": "1658a6e7-a608-4637-bf3e-f20eff634abe",
+              "uuid": "312e56ea-db5e-4ef3-b3bd-fae09cdfbeda",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Execute Azure Command",
-              "sourceStep": "/api/3/workflow_steps/498af753-50a0-442e-9a51-a8bb1525c868",
-              "targetStep": "/api/3/workflow_steps/9f662e75-5641-4683-9702-35a7d2604e86"
+              "sourceStep": "/api/3/workflow_steps/88fa1c02-d584-4034-a1cc-c5a92b9cbe52",
+              "targetStep": "/api/3/workflow_steps/cef3281d-105d-4bb1-959f-e49f731ceade"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "c33d2533-70f7-499b-93a7-97ff96d8d16b",
-          "collection": "/api/3/workflow_collections/f6d0a396-30a6-47dd-b183-002319a2e239",
+          "uuid": "b1b1a9d7-05fb-4028-8bd7-de277c144148",
+          "collection": "/api/3/workflow_collections/a4853588-4b54-4e99-94ed-ca98a470e535",
           "steps": [
             {
-              "uuid": "360b45d0-3cf4-48c8-a1e7-5c3b29f6f0e3",
+              "uuid": "938b8c4d-d807-48c2-a057-30da150cbc91",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -99,7 +99,7 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "a1aa2a70-15eb-4f74-ae08-fd430871518a",
+              "uuid": "8777baa9-dabc-4ed8-a5e0-83fd31a9d8bc",
               "@type": "WorkflowStep",
               "name": "Get Virtual Machines List",
               "description": null,
@@ -122,7 +122,7 @@
             }
           ],
           "triggerLimit": null,
-          "description": "List details of all VM information under the subscription on Microsoft Azure Platform .",
+          "description": "Retrieves a list of virtual machines associated with the subscription on Microsoft Azure Platform based on the resource group and other input parameters that you have specified.",
           "name": "Get Virtual Machines List",
           "tag": "#Azure Commands",
           "recordTags": [
@@ -134,26 +134,26 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/360b45d0-3cf4-48c8-a1e7-5c3b29f6f0e3",
+          "triggerStep": "/api/3/workflow_steps/938b8c4d-d807-48c2-a057-30da150cbc91",
           "routes": [
             {
-              "uuid": "c9e0e1c2-cae7-41c6-aa17-5d86ccba70c2",
+              "uuid": "f98ca950-a37c-4235-b7ed-bd52edaa079a",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Virtual Machines List",
-              "sourceStep": "/api/3/workflow_steps/360b45d0-3cf4-48c8-a1e7-5c3b29f6f0e3",
-              "targetStep": "/api/3/workflow_steps/a1aa2a70-15eb-4f74-ae08-fd430871518a"
+              "sourceStep": "/api/3/workflow_steps/938b8c4d-d807-48c2-a057-30da150cbc91",
+              "targetStep": "/api/3/workflow_steps/8777baa9-dabc-4ed8-a5e0-83fd31a9d8bc"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "f6af2bd3-5ec0-4aee-a525-599bf35849a2",
-          "collection": "/api/3/workflow_collections/f6d0a396-30a6-47dd-b183-002319a2e239",
+          "uuid": "53d4db34-9a97-4b6d-851e-6a19b8044bdb",
+          "collection": "/api/3/workflow_collections/a4853588-4b54-4e99-94ed-ca98a470e535",
           "steps": [
             {
-              "uuid": "954d42ea-bdf0-4fb8-9c7a-75696b6fdc47",
+              "uuid": "aade7ca3-cfc6-42d6-8729-74cdef214726",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -170,7 +170,7 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "051a514f-8e2b-4b66-b726-c734c9fe50e7",
+              "uuid": "fe6bc44e-37d8-41c5-9972-b5fbf9106797",
               "@type": "WorkflowStep",
               "name": "Get Virtual Machine",
               "description": null,
@@ -193,7 +193,7 @@
             }
           ],
           "triggerLimit": null,
-          "description": "Get details of a VM under the subscription on Microsoft Azure Platform by VM id and other parameters.",
+          "description": "Retrieves detailed information on virtual machines associated with the subscription on Microsoft Azure Platform based on the virtual machine ID or resource group and other input parameters that you have specified.",
           "name": "Get Virtual Machine",
           "tag": "#Azure Commands",
           "recordTags": [
@@ -205,26 +205,26 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/954d42ea-bdf0-4fb8-9c7a-75696b6fdc47",
+          "triggerStep": "/api/3/workflow_steps/aade7ca3-cfc6-42d6-8729-74cdef214726",
           "routes": [
             {
-              "uuid": "e0707234-0931-4cc0-a6a5-6f81ca5ec2b9",
+              "uuid": "3032f9a3-c001-4360-bd80-780d4c68a8f9",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Virtual Machine",
-              "sourceStep": "/api/3/workflow_steps/954d42ea-bdf0-4fb8-9c7a-75696b6fdc47",
-              "targetStep": "/api/3/workflow_steps/051a514f-8e2b-4b66-b726-c734c9fe50e7"
+              "sourceStep": "/api/3/workflow_steps/aade7ca3-cfc6-42d6-8729-74cdef214726",
+              "targetStep": "/api/3/workflow_steps/fe6bc44e-37d8-41c5-9972-b5fbf9106797"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "fc7a730d-2793-46ca-9fca-65442178baef",
-          "collection": "/api/3/workflow_collections/f6d0a396-30a6-47dd-b183-002319a2e239",
+          "uuid": "49372707-0451-4274-a264-95b8996944f5",
+          "collection": "/api/3/workflow_collections/a4853588-4b54-4e99-94ed-ca98a470e535",
           "steps": [
             {
-              "uuid": "0c053200-badb-4ddc-a042-1bec590e6daf",
+              "uuid": "3b385288-e13a-4019-8da9-fc26e6ef6901",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -241,7 +241,7 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "3c272fc5-b365-4858-a3c4-3bb8cc075bce",
+              "uuid": "31fddc3b-5900-4b08-a0f3-be53d0e667cb",
               "@type": "WorkflowStep",
               "name": "Delete Virtual Machine",
               "description": null,
@@ -264,7 +264,7 @@
             }
           ],
           "triggerLimit": null,
-          "description": "Delete a VM under the subscription on Microsoft Azure Platform on the basis of VM id and other parameters.",
+          "description": "Deletes a virtual machines associated with the subscription on Microsoft Azure Platform based on the virtual machine ID or resource group and other input parameters that you have specified.",
           "name": "Delete Virtual Machine",
           "tag": "#Azure Commands",
           "recordTags": [
@@ -276,26 +276,26 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/0c053200-badb-4ddc-a042-1bec590e6daf",
+          "triggerStep": "/api/3/workflow_steps/3b385288-e13a-4019-8da9-fc26e6ef6901",
           "routes": [
             {
-              "uuid": "d9f5897c-f30f-48bf-a496-6a3aa2c191f9",
+              "uuid": "6f8824e2-cc80-43e3-a249-311a9946bbbe",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Delete Virtual Machine",
-              "sourceStep": "/api/3/workflow_steps/0c053200-badb-4ddc-a042-1bec590e6daf",
-              "targetStep": "/api/3/workflow_steps/3c272fc5-b365-4858-a3c4-3bb8cc075bce"
+              "sourceStep": "/api/3/workflow_steps/3b385288-e13a-4019-8da9-fc26e6ef6901",
+              "targetStep": "/api/3/workflow_steps/31fddc3b-5900-4b08-a0f3-be53d0e667cb"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "c7f8dd2a-7272-48da-b173-062485ffd2c9",
-          "collection": "/api/3/workflow_collections/f6d0a396-30a6-47dd-b183-002319a2e239",
+          "uuid": "6c626611-85d3-4cb1-991b-dd548d9aa311",
+          "collection": "/api/3/workflow_collections/a4853588-4b54-4e99-94ed-ca98a470e535",
           "steps": [
             {
-              "uuid": "30d710fd-3741-4e1a-b363-a149eed0aa37",
+              "uuid": "7aa23aa9-c640-4d43-87b4-297d06e8c548",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -312,7 +312,7 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "336d543f-027f-4a05-bd11-fca73628c11f",
+              "uuid": "e51d8bc3-72e6-40ff-8de2-579998fe72b4",
               "@type": "WorkflowStep",
               "name": "Get Resources List",
               "description": null,
@@ -335,7 +335,7 @@
             }
           ],
           "triggerLimit": null,
-          "description": "List details of all Resource's information under the subscription on Microsoft Azure Platform .",
+          "description": "Retrieves detailed information on all resources associated with the subscription on Microsoft Azure Platform based on the location and other input parameters that you have specified.",
           "name": "Get Resources List",
           "tag": "#Azure Commands",
           "recordTags": [
@@ -347,26 +347,26 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/30d710fd-3741-4e1a-b363-a149eed0aa37",
+          "triggerStep": "/api/3/workflow_steps/7aa23aa9-c640-4d43-87b4-297d06e8c548",
           "routes": [
             {
-              "uuid": "c6fac8d0-b22a-47dc-9a17-bcb60e20e340",
+              "uuid": "4526fb6d-331b-4412-ac12-0e359d1b5fd7",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Resources List",
-              "sourceStep": "/api/3/workflow_steps/30d710fd-3741-4e1a-b363-a149eed0aa37",
-              "targetStep": "/api/3/workflow_steps/336d543f-027f-4a05-bd11-fca73628c11f"
+              "sourceStep": "/api/3/workflow_steps/7aa23aa9-c640-4d43-87b4-297d06e8c548",
+              "targetStep": "/api/3/workflow_steps/e51d8bc3-72e6-40ff-8de2-579998fe72b4"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "e44e4c9a-a1ef-42c7-b401-b30f1c226c45",
-          "collection": "/api/3/workflow_collections/f6d0a396-30a6-47dd-b183-002319a2e239",
+          "uuid": "8507f955-5e9b-469e-9fd8-9165fe775f9b",
+          "collection": "/api/3/workflow_collections/a4853588-4b54-4e99-94ed-ca98a470e535",
           "steps": [
             {
-              "uuid": "5e8a4931-2493-49ee-accb-46096cfafec3",
+              "uuid": "4331de5a-e93f-4143-ab53-585e421a901e",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -383,7 +383,7 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "9211732f-9f32-477f-b75f-ead50e10d1d6",
+              "uuid": "e21841dc-661d-4b43-a62d-e15a785aa04e",
               "@type": "WorkflowStep",
               "name": "Get Resource",
               "description": null,
@@ -406,7 +406,7 @@
             }
           ],
           "triggerLimit": null,
-          "description": "Get details of a Resource under the subscription on Microsoft Azure Platform by Resource id and other parameters.",
+          "description": "Retrieves details of a resource associated with the subscription on Microsoft Azure Platform based on the resource ID or resource group and other input parameters that you have specified.",
           "name": "Get Resource",
           "tag": "#Azure Commands",
           "recordTags": [
@@ -418,26 +418,26 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/5e8a4931-2493-49ee-accb-46096cfafec3",
+          "triggerStep": "/api/3/workflow_steps/4331de5a-e93f-4143-ab53-585e421a901e",
           "routes": [
             {
-              "uuid": "08549ac6-be1c-4b30-ba88-e948041d0af4",
+              "uuid": "4bb2c51c-c7f2-423f-a5dc-2cb700613557",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Resource",
-              "sourceStep": "/api/3/workflow_steps/5e8a4931-2493-49ee-accb-46096cfafec3",
-              "targetStep": "/api/3/workflow_steps/9211732f-9f32-477f-b75f-ead50e10d1d6"
+              "sourceStep": "/api/3/workflow_steps/4331de5a-e93f-4143-ab53-585e421a901e",
+              "targetStep": "/api/3/workflow_steps/e21841dc-661d-4b43-a62d-e15a785aa04e"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "815d00e6-67af-419f-8cfc-d041bbec969c",
-          "collection": "/api/3/workflow_collections/f6d0a396-30a6-47dd-b183-002319a2e239",
+          "uuid": "d715888c-a572-4f3a-9e49-ed8d83e3459b",
+          "collection": "/api/3/workflow_collections/a4853588-4b54-4e99-94ed-ca98a470e535",
           "steps": [
             {
-              "uuid": "29cffff7-b28e-4a41-adf5-f1475afd1e18",
+              "uuid": "38e88b46-2453-4675-bdfb-6e489973afd3",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -454,7 +454,7 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "2ff449a7-92b5-45d1-8801-9778eb6e238c",
+              "uuid": "05f2224a-965d-44ab-949e-dfb470e74fe8",
               "@type": "WorkflowStep",
               "name": "Delete Resource",
               "description": null,
@@ -477,7 +477,7 @@
             }
           ],
           "triggerLimit": null,
-          "description": "Delete a Resource under the subscription on Microsoft Azure Platform on the basis of Resource id and other parameters.",
+          "description": "Deletes a resource associated with the subscription on Microsoft Azure Platform based on the virtual machine ID or resource group and other input parameters that you have specified.",
           "name": "Delete Resource",
           "tag": "#Azure Commands",
           "recordTags": [
@@ -489,26 +489,26 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/29cffff7-b28e-4a41-adf5-f1475afd1e18",
+          "triggerStep": "/api/3/workflow_steps/38e88b46-2453-4675-bdfb-6e489973afd3",
           "routes": [
             {
-              "uuid": "67aa17bb-2e97-4e6a-8318-dff3fd5c2b9b",
+              "uuid": "8a9f0e4a-c98b-442e-8dff-57e473c08a68",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Delete Resource",
-              "sourceStep": "/api/3/workflow_steps/29cffff7-b28e-4a41-adf5-f1475afd1e18",
-              "targetStep": "/api/3/workflow_steps/2ff449a7-92b5-45d1-8801-9778eb6e238c"
+              "sourceStep": "/api/3/workflow_steps/38e88b46-2453-4675-bdfb-6e489973afd3",
+              "targetStep": "/api/3/workflow_steps/05f2224a-965d-44ab-949e-dfb470e74fe8"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "7db9c9ea-f05c-4a50-8fc7-766f8217c80e",
-          "collection": "/api/3/workflow_collections/f6d0a396-30a6-47dd-b183-002319a2e239",
+          "uuid": "08113dd4-fb05-45fd-8e66-81700ed84508",
+          "collection": "/api/3/workflow_collections/a4853588-4b54-4e99-94ed-ca98a470e535",
           "steps": [
             {
-              "uuid": "bf4a8cd8-bfbf-47f8-9460-970f6eff1acd",
+              "uuid": "ef172b9d-9740-44fd-bec2-49c1ffbbbc4d",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -525,7 +525,7 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "2fea536e-53ac-47fa-a09b-289632c6b6a2",
+              "uuid": "779461e3-7b7f-4b69-8b20-e020b5ef04c0",
               "@type": "WorkflowStep",
               "name": "Get Webapp List",
               "description": null,
@@ -548,7 +548,7 @@
             }
           ],
           "triggerLimit": null,
-          "description": "List details of all Webapp information under the subscription on Microsoft Azure Platform.",
+          "description": "Retrieves a list of all web applications associated with the subscription on Microsoft Azure Platform based on the resource group and other input parameters that you have specified.",
           "name": "Get Webapp List",
           "tag": "#Azure Commands",
           "recordTags": [
@@ -560,26 +560,26 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/bf4a8cd8-bfbf-47f8-9460-970f6eff1acd",
+          "triggerStep": "/api/3/workflow_steps/ef172b9d-9740-44fd-bec2-49c1ffbbbc4d",
           "routes": [
             {
-              "uuid": "fb55a471-0c16-470c-b292-1e7831aa35b6",
+              "uuid": "77213b18-ccab-49f2-ae6c-0e42b3f434cf",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Webapp List",
-              "sourceStep": "/api/3/workflow_steps/bf4a8cd8-bfbf-47f8-9460-970f6eff1acd",
-              "targetStep": "/api/3/workflow_steps/2fea536e-53ac-47fa-a09b-289632c6b6a2"
+              "sourceStep": "/api/3/workflow_steps/ef172b9d-9740-44fd-bec2-49c1ffbbbc4d",
+              "targetStep": "/api/3/workflow_steps/779461e3-7b7f-4b69-8b20-e020b5ef04c0"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "5352badf-dde2-4631-8996-994b284ea2f1",
-          "collection": "/api/3/workflow_collections/f6d0a396-30a6-47dd-b183-002319a2e239",
+          "uuid": "0db43632-687c-4eac-b41d-ba9d38b3e3cf",
+          "collection": "/api/3/workflow_collections/a4853588-4b54-4e99-94ed-ca98a470e535",
           "steps": [
             {
-              "uuid": "ed6e6511-4d2e-46c5-a368-4625dcaccd44",
+              "uuid": "4a81ac2c-9cc2-4c40-83c3-1d517e298e1e",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -596,7 +596,7 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "c690ad06-bfbe-4af8-8610-03db8f9dd566",
+              "uuid": "54f6284a-2098-4a3d-b86a-ea529b416f79",
               "@type": "WorkflowStep",
               "name": "Get SSH Keys List",
               "description": null,
@@ -619,7 +619,7 @@
             }
           ],
           "triggerLimit": null,
-          "description": "List details of all SSH Public Keys information under the subscription on Microsoft Azure Platform.",
+          "description": "Retrieves a list of all public SSH keys associated with the subscription on Microsoft Azure Platform based on the resource group and other input parameters that you have specified.",
           "name": "Get SSH Keys List",
           "tag": "#Azure Commands",
           "recordTags": [
@@ -631,26 +631,26 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/ed6e6511-4d2e-46c5-a368-4625dcaccd44",
+          "triggerStep": "/api/3/workflow_steps/4a81ac2c-9cc2-4c40-83c3-1d517e298e1e",
           "routes": [
             {
-              "uuid": "073c98f0-3b92-4cb1-86e9-4d5e6e92fe86",
+              "uuid": "8e4211e4-1cd3-4f5c-9cce-3fbc01aacd01",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get SSH Keys List",
-              "sourceStep": "/api/3/workflow_steps/ed6e6511-4d2e-46c5-a368-4625dcaccd44",
-              "targetStep": "/api/3/workflow_steps/c690ad06-bfbe-4af8-8610-03db8f9dd566"
+              "sourceStep": "/api/3/workflow_steps/4a81ac2c-9cc2-4c40-83c3-1d517e298e1e",
+              "targetStep": "/api/3/workflow_steps/54f6284a-2098-4a3d-b86a-ea529b416f79"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "77076f64-7dc4-433a-8c54-c0c2be3a6cc6",
-          "collection": "/api/3/workflow_collections/f6d0a396-30a6-47dd-b183-002319a2e239",
+          "uuid": "eb503bc1-a5ed-4ae3-8168-84988d7941aa",
+          "collection": "/api/3/workflow_collections/a4853588-4b54-4e99-94ed-ca98a470e535",
           "steps": [
             {
-              "uuid": "8c04b053-8e6e-4cc9-952d-27267248bd8a",
+              "uuid": "59e25347-5911-4b81-bf2d-d3e082aede18",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
@@ -667,7 +667,7 @@
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "uuid": "9efc67ee-83c8-4a4e-9464-c58446b6ed81",
+              "uuid": "fd83d11d-f437-4d64-9ed6-814487b5abdd",
               "@type": "WorkflowStep",
               "name": "Get Storage FS Directory List",
               "description": null,
@@ -690,7 +690,7 @@
             }
           ],
           "triggerLimit": null,
-          "description": "List details of all directories in ADLS Gen2 file system under the subscription on Microsoft Azure Platform.",
+          "description": "Retrieves a list of all directories in ADLS Gen2 file system associated with the subscription on Microsoft Azure Platform based on the container name and other input parameters that you have specified.",
           "name": "Get Storage FS Directory List",
           "tag": "#Azure Commands",
           "recordTags": [
@@ -702,16 +702,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/8c04b053-8e6e-4cc9-952d-27267248bd8a",
+          "triggerStep": "/api/3/workflow_steps/59e25347-5911-4b81-bf2d-d3e082aede18",
           "routes": [
             {
-              "uuid": "200bd618-f8b3-426e-ad37-132e956939ef",
+              "uuid": "d65a6a9e-f521-465e-bfd3-32a138a09725",
               "@type": "WorkflowRoute",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Storage FS Directory List",
-              "sourceStep": "/api/3/workflow_steps/8c04b053-8e6e-4cc9-952d-27267248bd8a",
-              "targetStep": "/api/3/workflow_steps/9efc67ee-83c8-4a4e-9464-c58446b6ed81"
+              "sourceStep": "/api/3/workflow_steps/59e25347-5911-4b81-bf2d-d3e082aede18",
+              "targetStep": "/api/3/workflow_steps/fd83d11d-f437-4d64-9ed6-814487b5abdd"
             }
           ]
         }
